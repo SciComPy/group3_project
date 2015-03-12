@@ -28,4 +28,15 @@ def throwNeedles(numNeedles):
         if (x*x + y*y)**0.5 <= 1.0:
             inCircle += 1
     return 4*(inCircle/float(numNeedles))
- 
+
+def getEst(numNeedles, numTrials):
+    estimates = []
+    for t in range(numTrials):
+        piGuess = throwNeedles(numNeedles)
+        estimates.append(piGuess)
+    sDev = stdDev(estimates)
+    curEst = sum(estimates)/len(estimates)
+    print 'Est. = ' + str(curEst) +\
+          ', Std. dev. = ' + str(round(sDev, 6))\
+          + ', Needles = ' + str(numNeedles)
+    return (curEst, sDev)
