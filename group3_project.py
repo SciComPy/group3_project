@@ -1,4 +1,5 @@
-import random, pylab
+import random
+import pylab
  
 #set line width
 pylab.rcParams['lines.linewidth'] = 6
@@ -40,3 +41,14 @@ def getEst(numNeedles, numTrials):
           ', Std. dev. = ' + str(round(sDev, 6))\
           + ', Needles = ' + str(numNeedles)
     return (curEst, sDev)
+
+def estPi(precision, numTrials):
+    numNeedles = 1000
+    sDev = precision
+    while sDev >= precision/2.0:
+        curEst, sDev = getEst(numNeedles, numTrials)
+        numNeedles *= 2
+    return curEst
+ 
+random.seed(0)
+estPi(0.005, 100)
