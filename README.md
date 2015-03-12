@@ -7,7 +7,4 @@ Project Description: Write a program that estimates pi using the Buffon-Laplace 
 
 
 Proponents:
-	Hernandez, Jill Bernadine
-	Juntilla, Gelsy
-	Patenio, Camille Sharmaine
-	Sy, Maria Krisha
+	Hernandez, Juntilla, Patenio, Sy
